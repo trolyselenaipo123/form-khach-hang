@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Thông Tin Khách Hàng</title>
+    <link rel="stylesheet" href="style.css"> <!-- Kết nối với file CSS -->
+</head>
+<body>
+    <div class="container">
+        <h2>Form thông tin khách hàng</h2>
+        <form id="customerForm" onsubmit="handleFormSubmit(event)">
+            <div class="row">
+                <label for="name">Tên khách hàng</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="phone">SĐT</label>
+                <input type="tel" id="phone" name="phone" required>
+                
+                <label for="gender">Giới tính</label>
+                <select id="gender" name="gender">
+                    <option value="">- Select -</option>
+                    <option value="Nam">Nam</option>
+                    <option value="Nữ">Nữ</option>
+                    <option value="Khác">Khác</option>
+                </select>
+            </div>
+
+            <div class="tabs">
+                <button type="button" class="tab active" onclick="showTab('individual')">Cá nhân</button>
+                <button type="button" class="tab" onclick="showTab('business')">Doanh nghiệp</button>
+            </div>
+
+            <div id="individual" class="tab-content">
+                <p><strong>Dịch vụ pháp lý</strong></p>
+                <label><input type="checkbox" name="service" value="Tư vấn miễn phí" checked> Tư vấn miễn phí</label>
+                <label><input type="checkbox" name="service" value="Tư vấn tin nhắn"> Tư vấn qua tin nhắn (Email/Zalo)</label>
+                <label><input type="checkbox" name="service" value="Tư vấn qua call"> Tư vấn qua cuộc gọi (Zalo/Zoom)</label>
+                <label><input type="checkbox" name="service" value="Tư vấn qua cuộc gọi/offline tính theo giờ" checked> Tư vấn qua cuộc gọi/offline tính theo giờ</label>
+                <label><input type="checkbox" name="service" value="Tư vấn chuyên sâu theo vụ thể"> Tư vấn chuyên sâu theo vụ thể</label>
+                <label><input type="checkbox" name="service" value="Dịch vụ Luật sư riêng cho cá nhân"> Dịch vụ Luật sư riêng cho cá nhân</label>
+
+
+            </div>
+
+            <div id="business" class="tab-content" style="display: none;">
+                <p><strong>Dịch vụ pháp lý doanh nghiệp</strong></p>
+                <label><input type="checkbox" name="service" value="Tư vấn miễn phí" checked> Tư vấn miễn phí</label>
+                <label><input type="checkbox" name="service" value="Tư vấn tin nhắn"> Tư vấn qua tin nhắn (Email/Zalo)</label>
+                <label><input type="checkbox" name="service" value="Tư vấn qua call"> Tư vấn qua cuộc gọi (Zalo/Zoom)</label>
+                <label><input type="checkbox" name="service" value="Tư vấn qua cuộc gọi/offline tính theo giờ" checked> Tư vấn qua cuộc gọi/offline tính theo giờ</label>
+                <label><input type="checkbox" name="service" value="Tư vấn chuyên sâu theo vụ thể"> Tư vấn chuyên sâu theo vụ thể</label>
+                <label><input type="checkbox" name="service" value="Tư vấn luật hàng tháng"> Tư vấn luật hàng tháng</label>
+                <label><input type="checkbox" name="service" value="Dịch vụ trọn gói"> Gói dịch vụ trọn gói (SHTT, bản quyền...)</label>
+            </div>
+            <label for="lawType">Luật cần tư vấn</label>
+                <select id="lawType" name="lawType">
+                    <option value="">- Select -</option>
+                    <option value="Luật Hôn nhân">Luật Hôn nhân</option>
+                    <option value="Luật Đất đai">Luật Đất đai</option>
+                    <option value="Luật Hình sự">Luật Hình sự</option>
+                </select>
+            <label for="appointment">Thời gian đặt lịch</label>
+            <input type="datetime-local" id="appointment" name="appointment">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="issue">Vấn đề cần tư vấn</label>
+            <textarea id="issue" name="issue"></textarea>
+
+            <button type="submit">NHẬP LIỆU KHÁCH HÀNG</button>
+        </form>
+    </div>
+    <script src="script.js"></script> <!-- Kết nối với file JavaScript -->
+</body>
+</html>
